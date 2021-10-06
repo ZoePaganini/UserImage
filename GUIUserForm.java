@@ -29,6 +29,7 @@ public class GUIUserForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnGroupGender = new javax.swing.ButtonGroup();
         lblFirstName = new javax.swing.JLabel();
         txtFirstName = new javax.swing.JTextField();
         lblLastName = new javax.swing.JLabel();
@@ -36,13 +37,14 @@ public class GUIUserForm extends javax.swing.JFrame {
         lblBirthDate = new javax.swing.JLabel();
         txtBirthDate = new javax.swing.JTextField();
         lblGender = new javax.swing.JLabel();
-        txtGender = new javax.swing.JTextField();
         lblId = new javax.swing.JLabel();
         txtID = new javax.swing.JTextField();
         chkAlive = new javax.swing.JCheckBox();
         btnInput = new javax.swing.JButton();
         scrInfo = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txaInfo = new javax.swing.JTextArea();
+        radMale = new javax.swing.JRadioButton();
+        radFemale = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("User Form");
@@ -72,9 +74,16 @@ public class GUIUserForm extends javax.swing.JFrame {
             }
         });
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        scrInfo.setViewportView(jTextArea1);
+        txaInfo.setColumns(20);
+        txaInfo.setRows(5);
+        scrInfo.setViewportView(txaInfo);
+
+        btnGroupGender.add(radMale);
+        radMale.setSelected(true);
+        radMale.setText("Male");
+
+        btnGroupGender.add(radFemale);
+        radFemale.setText("Female");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -86,25 +95,28 @@ public class GUIUserForm extends javax.swing.JFrame {
                     .addComponent(scrInfo)
                     .addComponent(lblId)
                     .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(106, 106, 106)
-                            .addComponent(chkAlive, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnInput, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(lblFirstName)
-                                .addComponent(txtFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(lblBirthDate)
-                                .addComponent(txtBirthDate, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(49, 49, 49)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(lblGender)
-                                .addComponent(lblLastName)
-                                .addComponent(txtLastName)
-                                .addComponent(txtGender, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(33, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(106, 106, 106)
+                        .addComponent(chkAlive, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnInput, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblFirstName)
+                            .addComponent(txtFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblBirthDate)
+                            .addComponent(txtBirthDate, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(49, 49, 49)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblGender)
+                            .addComponent(lblLastName)
+                            .addComponent(txtLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(radMale, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(radFemale, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(16, 16, 16)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -128,14 +140,15 @@ public class GUIUserForm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtBirthDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(radMale)
+                    .addComponent(radFemale))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(chkAlive)
                     .addComponent(btnInput))
                 .addGap(18, 18, 18)
                 .addComponent(scrInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         pack();
@@ -143,7 +156,10 @@ public class GUIUserForm extends javax.swing.JFrame {
 
     private void btnInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInputActionPerformed
         LocalDate birthDate = LocalDate.parse(txtBirthDate.getText());
-        User user = new User(txtID.parseInt(), );
+        String gender = "Male";
+        if (radFemale.isSelected()) gender = "Female";
+        User user = new User(txtID.getText(), txtFirstName.getText(), txtLastName.getText(), birthDate, gender, chkAlive.isSelected());
+        txaInfo.setText(user.toString());
         
     }//GEN-LAST:event_btnInputActionPerformed
 
@@ -183,18 +199,20 @@ public class GUIUserForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup btnGroupGender;
     private javax.swing.JButton btnInput;
     private javax.swing.JCheckBox chkAlive;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel lblBirthDate;
     private javax.swing.JLabel lblFirstName;
     private javax.swing.JLabel lblGender;
     private javax.swing.JLabel lblId;
     private javax.swing.JLabel lblLastName;
+    private javax.swing.JRadioButton radFemale;
+    private javax.swing.JRadioButton radMale;
     private javax.swing.JScrollPane scrInfo;
+    private javax.swing.JTextArea txaInfo;
     private javax.swing.JTextField txtBirthDate;
     private javax.swing.JTextField txtFirstName;
-    private javax.swing.JTextField txtGender;
     private javax.swing.JTextField txtID;
     private javax.swing.JTextField txtLastName;
     // End of variables declaration//GEN-END:variables

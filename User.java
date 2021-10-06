@@ -12,14 +12,14 @@ import java.time.LocalDate;
  * @author Alumne
  */
 public class User {
-    private int id;
+    private String id;
     private String firstName;
     private String lastName;
     private LocalDate birthDate;
     private String gender;
     private boolean isAlive;
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -43,7 +43,7 @@ public class User {
         this.isAlive = isAlive;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
@@ -66,15 +66,20 @@ public class User {
     public boolean isIsAlive() {
         return isAlive;
     }
-
+    
+    
     @Override
     public String toString() {
         StringBuilder strUser = new StringBuilder();
-        strUser.append(this.id + ": " + this.lastName + ", " + this.firstName + " - " + age + " years old - " + this.gender + " - ");
-        return "User{" + "id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", birthDate=" + birthDate + ", gender=" + gender + ", isAlive=" + isAlive + '}';
+        int age = LocalDate.now().getYear() - birthDate.getYear();
+        String estado;
+        if (isAlive == true) estado = "Alive";
+        else estado = "Dead";
+        strUser.append(this.id + ": " + this.lastName + ", " + this.firstName + " - " + age + " years old - " + this.gender + " - " + estado);
+        return strUser.toString();
     }
 
-    public User(int id, String firstName, String lastName, LocalDate birthDate, String gender, boolean isAlive) {
+    public User(String id, String firstName, String lastName, LocalDate birthDate, String gender, boolean isAlive) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
