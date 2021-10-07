@@ -12,14 +12,14 @@ import java.time.LocalDate;
  * @author Alumne
  */
 public class User {
-    private String id;
+    private int id;
     private String firstName;
     private String lastName;
     private LocalDate birthDate;
     private String gender;
     private boolean isAlive;
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -43,7 +43,7 @@ public class User {
         this.isAlive = isAlive;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
@@ -79,7 +79,7 @@ public class User {
         return strUser.toString();
     }
 
-    public User(String id, String firstName, String lastName, LocalDate birthDate, String gender, boolean isAlive) {
+    public User(int id, String firstName, String lastName, LocalDate birthDate, String gender, boolean isAlive) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
