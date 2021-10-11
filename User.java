@@ -6,6 +6,7 @@
 package spdvi;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 /**
  *
@@ -75,7 +76,17 @@ public class User {
         String estado;
         if (isAlive == true) estado = "Alive";
         else estado = "Dead";
-        strUser.append(this.id + ": " + this.lastName + ", " + this.firstName + " - " + age + " years old - " + this.gender + " - " + estado);
+        strUser.append(this.id + ": " + this.lastName + ", " + this.firstName + " - " + age + " years old - " + this.gender + " - " + estado + System.lineSeparator());
+        return strUser.toString();
+    }
+    
+    public String toCSV() {
+        StringBuilder strUser= new StringBuilder();
+        String estado;
+        String formattedDate = getBirthDate().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        if (isAlive == true) estado = "Alive";
+        else estado = "Dead";
+        strUser.append(this.id + "," + this.lastName + "," + this.firstName + "," + formattedDate + "," + this.gender + "," + estado + System.lineSeparator());
         return strUser.toString();
     }
 
