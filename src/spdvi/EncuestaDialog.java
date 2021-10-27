@@ -12,7 +12,7 @@ import javax.swing.JLabel;
  * @author Alumne
  */
 public class EncuestaDialog extends javax.swing.JDialog {
-
+    boolean imagen;
     /**
      * Creates new form EncuestaDialog
      */
@@ -84,11 +84,13 @@ public class EncuestaDialog extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOKActionPerformed
+        imagen = true;
         this.setVisible(false);
     }//GEN-LAST:event_btnOKActionPerformed
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
-        // TODO add your handling code here:
+        imagen = false;
+        this.setVisible(false);
     }//GEN-LAST:event_btnCancelActionPerformed
 
     /**

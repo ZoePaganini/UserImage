@@ -1,0 +1,4 @@
+45,Paganini Echandia,Zoe,2002-10-10,Male,Alive,Jujutsu-Kaisen.jpg
+10,Last Name,Zoe,2002-11-11,Male,Dead,Akame-ga-kill.jpg
+12,Last Name,Zoe,2002-11-11,Male,Dead,One-Piece.jpg
+100,Last Name,Zoe,2001-11-11,Male,Alive,hunter-x-hunter-233.jpg
